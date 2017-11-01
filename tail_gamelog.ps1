@@ -26,14 +26,21 @@ function Get-LogColor {
 
     process {
         
-        if     ($LogEntry|where{$_ -match $green})  {Return "Green"}
-        elseif ($LogEntry|where{$_ -match $yellow}) {Return "Yellow"}
+        if     ($LogEntry|where{$_ -match $blue})       {Return "Blue"}
+        elseif ($LogEntry|where{$_ -match $cyan})       {Return "Cyan"}
+        elseif ($LogEntry|where{$_ -match $darkblue})   {Return "DarkBlue"}
+        elseif ($LogEntry|where{$_ -match $darkgreen})  {Return "DarkGreen"}
+        elseif ($LogEntry|where{$_ -match $darkgrey})   {Return "DarkGrey"}
+        elseif ($LogEntry|where{$_ -match $darkcyan})   {Return "DarkCyan"}
+        elseif ($LogEntry|where{$_ -match $darkmagenta}){Return "DarkMagenta"}
+        elseif ($LogEntry|where{$_ -match $darkred})    {Return "DarkRed"}
         elseif ($LogEntry|where{$_ -match $darkYellow}) {Return "DarkYellow"}
-        elseif ($LogEntry|where{$_ -match $red})    {Return "Red"}
-        elseif ($LogEntry|where{$_ -match $blue})    {Return "Blue"}
-        elseif ($LogEntry|where{$_ -match $cyan})    {Return "Cyan"}
+        elseif ($LogEntry|where{$_ -match $green})      {Return "Green"}
+        elseif ($LogEntry|where{$_ -match $grey})       {Return "Grey"}
         elseif ($LogEntry|where{$_ -match $magenta})    {Return "Magenta"}
-        elseif ($LogEntry|where{$_ -match $grey})    {Return "Grey"}
+        elseif ($LogEntry|where{$_ -match $red})        {Return "Red"}
+        elseif ($LogEntry|where{$_ -match $yellow})     {Return "Yellow"}
+
         else {Return "White"}
 
 
