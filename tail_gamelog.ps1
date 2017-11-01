@@ -6,6 +6,10 @@ $Logfile = "H:\Games\DF\Dwarf Fortress 0.43.05\gamelog.txt" # <- change your gam
 
 # censor words
 $global:disable ="retches"
+
+# notify
+$global:notify = "masterpiece"
+$enableNotify = $true
     
 # assign colors, separate words or sentences with |
 $global:blue        = "mandate has"
@@ -23,6 +27,8 @@ $global:magenta     = "been struck|stuck in"
 $global:red         = "cancel|withdraw"
 $global:yellow      = "have struck|mandated"
 
+
+
 # remove comment if color in use
 function Get-LogColor {
     Param([Parameter(Position=0)]
@@ -30,7 +36,8 @@ function Get-LogColor {
 
     process {
         
-        if     ($LogEntry|where{$_ -match $blue})       {Return "Blue"}
+        
+        if ($LogEntry|where{$_ -match $blue})       {Return "Blue"}
         elseif ($LogEntry|where{$_ -match $cyan})       {Return "Cyan"}
         #elseif ($LogEntry|where{$_ -match $darkblue})   {Return "DarkBlue"}
         #elseif ($LogEntry|where{$_ -match $darkgreen})  {Return "DarkGreen"}
@@ -47,8 +54,35 @@ function Get-LogColor {
 
         else {Return "White"}
 
-
     }
 }
-Get-Content -wait $logFile -tail 400 |where {$_ -notmatch $disable} | ForEach { Write-Host -ForegroundColor (Get-LogColor $_) $_}
 
+# beep pattern, not used yet
+function Invoke-Beep {
+        [console]::beep(1000,400)
+        Start-Sleep -m 700
+        [console]::beep(1000,400)
+        Start-Sleep -m 700
+        [console]::beep(1000,400)
+        Start-Sleep -m 700
+        [console]::beep(1000,1000)
+        }
+
+function notify {
+    Param([Parameter(Position=0)]
+    [String]$LogEntry)
+    
+    if ($LogEntry|where{$_ -match $notify -and $enableNotify -eq $true}){
+        # comment to only disable beep
+        # [console]::beep(1000,1000)
+        # play a sequence of beeps
+        # Invoke-Beep
+        Return "!!___" + $_ + "___!!"}
+    
+    else{Return $_}
+    }
+
+Get-Content -wait $logFile -tail 400 |
+where {$_ -notmatch $disable} |
+foreach{ notify $_} |
+ForEach { Write-Host -ForegroundColor (Get-LogColor $_) $_}
