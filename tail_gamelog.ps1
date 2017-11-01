@@ -1,5 +1,5 @@
 ﻿# locate gamelog.txt, in the base dir of Dwarf Fortress
-$Logfile = "H:\Games\DF\Dwarf Fortress 0.43.05\gamelog.txt"
+$Logfile = "H:\Games\DF\Dwarf Fortress 0.43.05\gamelog.txt" # <- change your gamelog file here
 
 # censor words
 $global:disable ="retches"
@@ -7,11 +7,11 @@ $global:disable ="retches"
 # assign colors, separate words or sentences with |
 $global:blue        = "mandate has"
 $global:cyan        = "masterpiece"
-#$global:darkblue   = ""
-#$global:darkgreen  = ""
-#$global:darkgrey   = ""
+#$global:darkblue    = ""
+#$global:darkgreen   = ""
+#$global:darkgrey    = ""
 #$global:darkmagenta = ""
-#$global:darkred    = ""
+#$global:darkred     = ""
 $global:darkyellow  = "migrant"
 $global:green       = "birth"
 $global:grey        = "has become"
@@ -19,7 +19,7 @@ $global:magenta     = "been struck"
 $global:red         = "cancel|withdraw"
 $global:yellow      = "have struck|mandated"
 
-# things happen
+# things happen, disregard
 function Get-LogColor {
     Param([Parameter(Position=0)]
     [String]$LogEntry)
@@ -28,12 +28,12 @@ function Get-LogColor {
         
         if     ($LogEntry|where{$_ -match $blue})       {Return "Blue"}
         elseif ($LogEntry|where{$_ -match $cyan})       {Return "Cyan"}
-        elseif ($LogEntry|where{$_ -match $darkblue})   {Return "DarkBlue"}
-        elseif ($LogEntry|where{$_ -match $darkgreen})  {Return "DarkGreen"}
-        elseif ($LogEntry|where{$_ -match $darkgrey})   {Return "DarkGrey"}
-        elseif ($LogEntry|where{$_ -match $darkcyan})   {Return "DarkCyan"}
-        elseif ($LogEntry|where{$_ -match $darkmagenta}){Return "DarkMagenta"}
-        elseif ($LogEntry|where{$_ -match $darkred})    {Return "DarkRed"}
+        #elseif ($LogEntry|where{$_ -match $darkblue})   {Return "DarkBlue"}
+        #elseif ($LogEntry|where{$_ -match $darkgreen})  {Return "DarkGreen"}
+        #elseif ($LogEntry|where{$_ -match $darkgrey})   {Return "DarkGrey"}
+        #elseif ($LogEntry|where{$_ -match $darkcyan})   {Return "DarkCyan"}
+        #elseif ($LogEntry|where{$_ -match $darkmagenta}){Return "DarkMagenta"}
+        #elseif ($LogEntry|where{$_ -match $darkred})    {Return "DarkRed"}
         elseif ($LogEntry|where{$_ -match $darkYellow}) {Return "DarkYellow"}
         elseif ($LogEntry|where{$_ -match $green})      {Return "Green"}
         elseif ($LogEntry|where{$_ -match $grey})       {Return "Grey"}
