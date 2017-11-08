@@ -1,5 +1,5 @@
 ﻿## Tail Dwarf Fortress action/combat -log with added colors
-## by Urist McKarsten
+## by Urist McKarsten 11/2017
 
 # locate gamelog.txt, in the base dir of Dwarf Fortress
 $Logfile = "H:\Games\DF\Dwarf Fortress 0.43.05\gamelog.txt" # <- change your gamelog file here
@@ -7,9 +7,9 @@ $Logfile = "H:\Games\DF\Dwarf Fortress 0.43.05\gamelog.txt" # <- change your gam
 # censor words
 $global:disable ="retches"
 
-# notify
-$global:notify = "masterpiece"
+# notify service
 $enableNotify = $true
+$global:notify = "masterpiece"
     
 # assign colors, separate words or sentences with |
 $global:blue        = "mandate has"
@@ -21,8 +21,8 @@ $global:darkcyan    = "been completed"
 #$global:darkmagenta = ""
 #$global:darkred     = ""
 $global:darkyellow  = "migrant"
-$global:green       = "birth"
-$global:grey        = "has become"
+$global:green       = "birth|calendar"
+$global:gray        = "has become"
 $global:magenta     = "been struck|stuck in"
 $global:red         = "cancel|withdraw"
 $global:yellow      = "have struck|mandated"
@@ -47,7 +47,7 @@ function Get-LogColor {
         #elseif ($LogEntry|where{$_ -match $darkred})    {Return "DarkRed"}
         elseif ($LogEntry|where{$_ -match $darkYellow}) {Return "DarkYellow"}
         elseif ($LogEntry|where{$_ -match $green})      {Return "Green"}
-        elseif ($LogEntry|where{$_ -match $grey})       {Return "Grey"}
+        elseif ($LogEntry|where{$_ -match $gray})       {Return "Gray"}
         elseif ($LogEntry|where{$_ -match $magenta})    {Return "Magenta"}
         elseif ($LogEntry|where{$_ -match $red})        {Return "Red"}
         elseif ($LogEntry|where{$_ -match $yellow})     {Return "Yellow"}
