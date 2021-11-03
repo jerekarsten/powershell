@@ -1,0 +1,23 @@
+{   
+    "Settings":{
+        "path": "H:\\Games\\DF Mephs\\Dwarf Fortress",
+        "linecount": 400
+    },
+    "Colors":{
+        "blue":["mandate has","raining"],
+        "cyan":["masterpiece","hunter"],
+        "darkblue":["attack"],
+        "darkcyan":["been completed"],
+        "darkgreen":["been struck","stuck in"],
+        "darkgray":[""],
+        "darkmagenta":["dead"],
+        "darkred":["vomit"],
+        "darkyellow":["migrant"],
+        "green":["birth","calendar"],
+        "gray":["has become"],
+        "magenta":["missing"],
+        "red":[ "cancel","withdraw","strikes the","torn","shattering","gore","attack","bruising","pain","slams"],
+        "yellow":["have struck","spring","summer","autumn","winter"]
+    },
+    "WordFilter":["retches"]
+}
