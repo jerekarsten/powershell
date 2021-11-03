@@ -7,7 +7,7 @@
 ---
 
 
-# Tail-DFGamelog
+## Tail-DFGamelog
 Powershell script to monitor Dwarf Fortress gamelog
 
 Setup:
