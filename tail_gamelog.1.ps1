@@ -82,6 +82,6 @@ function notify {
     }
 
 Get-Content -wait $logFile -tail 400 |
-where {$_ -notmatch $disable} |
-foreach{ notify $_} |
-ForEach { Write-Host -ForegroundColor (Get-LogColor $_) $_}
+Where-Object {$_ -notmatch $disable} |
+ForEach-Object{ notify $_} |
+ForEach-Object { Write-Host -ForegroundColor (Get-LogColor $_) $_}
